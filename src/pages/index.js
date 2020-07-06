@@ -10,7 +10,7 @@ const IndexPage = ({
 }) => {
   const Posts = edges
     .filter(edge => !!edge.node.frontmatter.date) // You can filter your posts based on some criteria
-    .map(edge => <PostLink key={edge.node.id} post={edge.node} />)
+    .map(edge => <PostLink key={edge.node.id} post={edge.node}/>)
 
   return (
   <Layout>
@@ -30,8 +30,8 @@ export const pageQuery = graphql`
           excerpt(pruneLength: 250)
           frontmatter {
             date(formatString: "YYYY-MM-DD")
-            path
             title
+            tags
           }
         }
       }
