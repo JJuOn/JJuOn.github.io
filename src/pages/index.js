@@ -14,6 +14,7 @@ const IndexPage = ({
 
   return (
   <Layout>
+    <h1>Posts</h1>
     <div>{Posts}</div>
   </Layout>
   )

@@ -3,6 +3,7 @@ import PropTypes from "prop-types"
 import React from "react"
 
 const Header = ({ siteTitle }) => (
+  <>
   <header
     style={{
       background: `black`,
@@ -28,7 +29,19 @@ const Header = ({ siteTitle }) => (
         </Link>
       </h1>
     </div>
+    <nav style={{
+        margin: `0 auto`,
+        maxWidth: 960,
+        padding: `1.45rem 1.0875rem`,
+    }}>
+    <ul class="nav-container">
+      <li class="nav-item"><Link to="/about">About</Link></li>
+      <li class="nav-item"><Link to="/">Posts</Link></li>
+      <li class="nav-item"><Link to="/tags">Tags</Link></li>
+    </ul>
+  </nav>
   </header>
+  </>
 )
 
 Header.propTypes = {

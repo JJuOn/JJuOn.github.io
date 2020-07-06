@@ -4,11 +4,11 @@ import _ from "lodash"
 
 const PostLink = ({ post }) => (
   <div>
-    <Link to={"/posts/"+_.kebabCase(post.frontmatter.title)}>
+    <Link to={"/posts/"+_.kebabCase(post.frontmatter.title)} style={{color: `black`}}>
       {post.frontmatter.title} ({post.frontmatter.date})
     </Link>
     <br/>
-    <span>{post.excerpt}</span>
+    <span style={{color: `grey`}}>{post.excerpt}</span>
   </div>
 )
 
