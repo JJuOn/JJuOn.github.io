@@ -40,7 +40,7 @@ const Header = ({ siteTitle }) => (
         display:`flex`
       }}>
         <li class="nav-item"><Link to="/about">About</Link></li>
-        <li class="nav-item"><Link to="/">Posts</Link></li>
+        <li class="nav-item"><Link to="/posts">Posts</Link></li>
         <li class="nav-item"><Link to="/tags">Tags</Link></li>
       </div>
     </ul>

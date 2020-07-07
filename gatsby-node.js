@@ -41,7 +41,24 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       reporter.panicOnBuild(`Error while running GraphQL query.`)
       return
     }
-    result.data.postsRemark.edges.forEach(({ node }) => {
+    const posts=result.data.postsRemark.edges
+    const postsPerPage=6
+    const numPages=Math.ceil(posts.length/postsPerPage)
+    Array.from({length:numPages}).forEach((_,i)=>{
+      console.log(`<LOG>${postsPerPage} ${postsPerPage*i}</LOG>`)
+      createPage({
+        path: i===0 ? `/posts` : `/posts/${i+1}`,
+        component:path.resolve("./src/templates/listTemplate.js"),
+        context: {
+          limit: postsPerPage,
+          skip: i*postsPerPage,
+          numPages:numPages,
+          currentPage: i + 1,
+        }
+      })
+    })
+    
+    posts.forEach(({ node }) => {
       createPage({
         path: "/posts/"+_.kebabCase(node.frontmatter.title),
         component: blogPostTemplate,

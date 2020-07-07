@@ -6,7 +6,6 @@ import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 
 const Tags = ({ pageContext, data }) => {
-  console.log(data);
   const { tag } = pageContext
   const { edges, totalCount } = data.allMarkdownRemark
   const tagHeader = `${totalCount} post${
@@ -18,7 +17,7 @@ const Tags = ({ pageContext, data }) => {
       <h1>{tagHeader}</h1>
       <ul>
         {edges.map(({ node }) => {
-          const path = "/posts/"+_.kebabCase(node.frontmatter.title)
+          const path = "/post/"+_.kebabCase(node.frontmatter.title)
           const { title } = node.frontmatter
           return (
             <li key={path}>

@@ -13,9 +13,10 @@ export default function Template({
       <div className="blog-post-container">
         <div className="blog-post">
           <h1>{frontmatter.title}</h1>
-          <h2>{frontmatter.date}</h2>
+          <p style={{textAlign:`right`}}>{frontmatter.date}</p>
           {frontmatter.tags ? 
           <div className="tags-container">
+            <p>{"<Tags>"}</p>
             <ul className="tags-list">
               {frontmatter.tags.map(tag=>(
                 <li key={tag+`tag`}>
