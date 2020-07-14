@@ -60,7 +60,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     
     posts.forEach(({ node }) => {
       createPage({
-        path: "/posts/"+_.kebabCase(node.frontmatter.title),
+        path: "/post/"+_.kebabCase(node.frontmatter.title),
         component: blogPostTemplate,
         context: {
           // additional data can be passed via context
