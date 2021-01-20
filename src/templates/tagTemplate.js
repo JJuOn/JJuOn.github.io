@@ -4,6 +4,7 @@ import _ from "lodash"
 // Components
 import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
+import {Helmet} from "react-helmet"
 
 const Tags = ({ pageContext, data }) => {
   const { tag } = pageContext
@@ -13,25 +14,28 @@ const Tags = ({ pageContext, data }) => {
   } tagged with "${tag}"`
 
   return (
-    <Layout>
-      <h1>{tagHeader}</h1>
-      <ul>
-        {edges.map(({ node }) => {
-          const path = "/post/"+_.kebabCase(node.frontmatter.title)
-          const { title } = node.frontmatter
-          return (
-            <li key={path}>
-              <Link to={path}>{title}</Link>
-            </li>
-          )
-        })}
-      </ul>
-      {/*
-              This links to a page that does not yet exist.
-              You'll come back to it!
-            */}
-      <Link to="/tags">All tags</Link>
-    </Layout>
+    <>
+      
+      <Layout>
+        <h1>{tagHeader}</h1>
+        <ul>
+          {edges.map(({ node }) => {
+            const path = "/post/"+_.kebabCase(node.frontmatter.title)
+            const { title } = node.frontmatter
+            return (
+              <li key={path}>
+                <Link to={path}>{title}</Link>
+              </li>
+            )
+          })}
+        </ul>
+        {/*
+                This links to a page that does not yet exist.
+                You'll come back to it!
+              */}
+        <Link to="/tags">All tags</Link>
+      </Layout>
+    </>
   )
 }
 

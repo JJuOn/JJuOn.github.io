@@ -2,6 +2,7 @@ import React from "react"
 import { graphql, Link } from "gatsby"
 import PostLink from "../components/postLink"
 import Layout from "../components/layout"
+import SEO from "../components/seo"
 
 const Template = ({pageContext,data}) => {
   const Posts = data.allMarkdownRemark.edges
@@ -12,17 +13,20 @@ const Template = ({pageContext,data}) => {
   const prevPage=(currentPage===2 ? " " : `${currentPage-1}`)
 
   return (
-  <Layout>
-    <h1>Posts</h1>
-    <div>{Posts}</div>
-    <div style={{textAlign:`center`}}>
-        {currentPage!==1 ? <Link to={`/posts/${prevPage}`}>{"<"}</Link> : " "}
-        {" "}
-        {currentPage}
-        {" "}
-        {currentPage===numPages ? "" : <Link to={`/posts/${currentPage+1}`}>{">"}</Link>}
-    </div>
-  </Layout>
+  <>
+    <SEO title="Posts"/>
+    <Layout>
+      <h1>Posts</h1>
+      <div>{Posts}</div>
+      <div style={{textAlign:`center`}}>
+          {currentPage!==1 ? <Link to={`/posts/${prevPage}`}>{"<"}</Link> : " "}
+          {" "}
+          {currentPage}
+          {" "}
+          {currentPage===numPages ? "" : <Link to={`/posts/${currentPage+1}`}>{">"}</Link>}
+      </div>
+    </Layout>
+  </>
   )
 }
 

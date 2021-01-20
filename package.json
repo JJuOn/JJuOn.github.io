@@ -1,5 +1,5 @@
 {
-  "name": "jjuOn.github.io",
+  "name": "JJuOn.github.io",
   "private": true,
   "description": "A simple starter to get up and developing quickly with Gatsby",
   "version": "0.1.0",
@@ -14,8 +14,8 @@
     "gatsby-plugin-sharp": "^2.6.13",
     "gatsby-remark-prismjs": "^3.5.9",
     "gatsby-remark-use-frontmatter-path": "^1.0.0",
-    "gatsby-source-filesystem": "^2.3.14",
-    "gatsby-transformer-remark": "^2.8.20",
+    "gatsby-source-filesystem": "^2.10.0",
+    "gatsby-transformer-remark": "^2.15.0",
     "gatsby-transformer-sharp": "^2.5.6",
     "prismjs": "^1.20.0",
     "prop-types": "^15.7.2",

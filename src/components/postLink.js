@@ -4,7 +4,7 @@ import _ from "lodash"
 
 const PostLink = ({ post }) => (
   <div>
-    <Link to={"/posts/"+_.kebabCase(post.frontmatter.title)} style={{color: `black`}}>
+    <Link to={"/post/"+_.kebabCase(post.frontmatter.title)} style={{color: `black`}}>
       {post.frontmatter.title} ({post.frontmatter.date})
     </Link>
     <br/>

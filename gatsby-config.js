@@ -23,7 +23,8 @@ module.exports = {
     {
       resolve:`gatsby-transformer-remark`,
       options:{
-        plugins:[`gatsby-remark-use-frontmatter-path`,
+        plugins:[
+          `gatsby-remark-use-frontmatter-path`,
           {
             resolve: `gatsby-remark-prismjs`,
             options: {
