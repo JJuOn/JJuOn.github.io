@@ -3,6 +3,8 @@ html {
   font-family: 'Nanum Gothic', sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
+  margin: 0;
+  overflow-x:hidden;
 }
 body {
   margin: 0;
@@ -14,9 +16,25 @@ aside,
 details,
 figcaption,
 figure,
-footer,
-header,
-main,
+footer {
+  display:flex;
+  flex-direction: row;
+  width: 100vw;
+  margin:0;
+  padding:0;
+  background-color: darkslategray;
+  list-style-type: none;
+  position: absolute;
+}
+header {
+  position: fixed;
+  width:100vw;
+  z-index: 5;
+}
+main{
+  padding-top: 25vh;
+  min-height: 83.25vh;
+}
 menu,
 nav,
 section,
